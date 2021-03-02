@@ -2,35 +2,32 @@
 
 guessPrompt();
 
-// function getRandomInt(min, max) {
-//     min = Math.ceil(min);
-//     max = Math.floor(max);
-//     return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
+
 
 void guessPrompt()
  {
      Console.WriteLine("Guess a number");
      string answer = Console.ReadLine();
      
-     int num = 42;
+     int num = new Random().Next(1, 100);
+     Console.WriteLine(num);
      int chance = 1;
      bool run = true;
     
-    while (chance < 4){
+    while (chance < 5){
 
      if (num == int.Parse(answer)){
-         Console.WriteLine("Good guess!");
-         chance = 4;
+         Console.WriteLine("Good guess! You nailed it! " + answer + " is the secret number!");
+         chance = 5;
          run = false;
      } else {
-         Console.WriteLine("Nope! Too bad...");
-         Console.WriteLine("Try Again");
-         Console.ReadLine();
+         Console.WriteLine("You guessed " + answer + ", Nope! Too bad...");
+        //  Console.WriteLine("Try Again");
+         answer = Console.ReadLine();
          
          ++chance;
 
-         if (chance == 4){
+         if (chance == 5){
              run = false;
          }
      }}
