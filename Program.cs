@@ -69,7 +69,9 @@ int difficultySetting() {
          } else if (difficulty == "medium") {
              guesses = 6;
          } else if (difficulty == "hard") {
-              guesses = 4;
+             guesses = 4;
+         } else if (difficulty == "cheater") {
+             guesses = 100; 
          }
     return guesses;
 
@@ -121,8 +123,46 @@ void guessPrompt()
      if (num == int.Parse(answer)){
          Console.WriteLine("Good guess! You nailed it! " + answer + " is the secret number!");
          chance = 4;
-         run = false;
-     } else {
+         Console.WriteLine("");
+         Console.WriteLine("");
+         Console.WriteLine("");
+         Console.WriteLine("");
+         Console.WriteLine("");
+         Console.WriteLine(@"
+
+
+                                                                                                           
+ _____      _____        _____     ____   ____         _____            ____  _____   ______   
+|\    \    /    /|  ____|\    \   |    | |    |       |\    \   _____  |    ||\    \ |\     \  
+| \    \  /    / | /     /\    \  |    | |    |       | |    | /    /| |    | \\    \| \     \ 
+|  \____\/    /  //     /  \    \ |    | |    |       \/     / |    || |    |  \|    \  \     |
+ \ |    /    /  /|     |    |    ||    | |    |       /     /_  \   \/ |    |   |     \  |    |
+  \|___/    /  / |     |    |    ||    | |    |      |     // \  \   \ |    |   |      \ |    |
+      /    /  /  |\     \  /    /||    | |    |      |    |/   \ |    ||    |   |    |\ \|    |
+     /____/  /   | \_____\/____/ ||\___\_|____|      |\ ___/\   \|   /||____|   |____||\_____/|
+    |`    | /     \ |    ||    | /| |    |    |      | |   | \______/ ||    |   |    |/ \|   ||
+    |_____|/       \|____||____|/  \|____|____|       \|___|/\ |    | ||____|   |____|   |___|/
+       )/             \(    )/        \(   )/            \(   \|____|/   \(       \(       )/  
+       '               '    '          '   '              '      )/       '        '       '   
+                                                                 '                             
+
+
+            ");
+         
+     } else if (guesses == 100) {
+         
+         Console.WriteLine("You guessed " + answer);
+         if (num > int.Parse(answer)){
+             Console.WriteLine("Thats too low");
+         } else {
+             Console.WriteLine("Thats too high");
+         }
+         Console.WriteLine("Keep on going...cheater...");
+         answer = Console.ReadLine();
+
+     } 
+     
+       else {
          guesses--;
          
          Console.WriteLine("You guessed " + answer);
@@ -135,6 +175,8 @@ void guessPrompt()
          answer = Console.ReadLine();
          
          ++chance;
+         
+     
 
          if (chance == 4){
              run = false;
@@ -172,6 +214,11 @@ void guessPrompt()
             
             ");
         }
+
+       
+            
+
+        
      
      }
  
