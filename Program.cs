@@ -47,8 +47,8 @@ int difficultySetting() {
         \|             (___-  )
         \|                 \~~'
          \         .--\___  )           Select your difficulty Butthead...
-         |        /-'-(_(|~T        <       Easy, Medium, or Hard....heh heh
-         `\     |      <'~~               
+         |        /-'-(_(|~T        <       Easy, Medium, or Hard....heh heh...
+         `\     |      <'~~                       Don't be a Cheater...wink, wink.
           \     \ ___   \-__.
           |      \__---~~   )
           |    (           /'
@@ -72,7 +72,7 @@ int difficultySetting() {
              guesses = 4;
          } else if (difficulty == "cheater") {
              guesses = 100; 
-         }
+         } 
     return guesses;
 
 }
